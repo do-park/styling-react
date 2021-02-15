@@ -1,0 +1,55 @@
+// 변수
+$red: #d63031;
+$orange: #e17055;
+$yellow: #fdcb6e;
+$green: #00b894;
+$blue: #00cec9;
+$indigo: #0984e3;
+$violet: #6c5ce7;
+
+// mixin: 재사용되는 스타일 블록을 함수처럼 사용
+@mixin square($size) {
+  $calculated: 32px * $size;
+  width: $calculated;
+  height: $calculated;
+}
+
+.SassComponent {
+  display: flex;
+  .box {
+    background: red;
+    cursor: pointer;
+    transition: all 0.3s ease-in;
+    &.red {
+      background: $red;
+      @include square(1);
+    }
+    &.orange {
+      background: $orange;
+      @include square(2);
+    }
+    &.yellow {
+      background: $yellow;
+      @include square(3);
+    }
+    &.green {
+      background: $green;
+      @include square(4);
+    }
+    &.blue {
+      background: $blue;
+      @include square(5);
+    }
+    &.indigo {
+      background: $indigo;
+      @include square(6);
+    }
+    &.violet {
+      background: $violet;
+      @include square(7);
+    }
+    &:hover {
+      background: black;
+    }
+  }
+}
